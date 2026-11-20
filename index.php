@@ -209,25 +209,27 @@ function renderElement($element)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Periodic Table of Elements</title>
+    <linkhref="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<div class="page">
+<div class="page container-fluid">
 
     <!-- HEADER -->
 
-    <header class="page-header">
+    <header class="page-header d-flex justify-content-between align-items-center flex-wrap gap-3">
 
         <h1>Periodic Table of Elements</h1>
 
         <input
-            type="search"
-            id="search-element"
-            placeholder="Search element..."
-            autocomplete="off"
+        type="search"
+        id="search-element"
+        class="form-control"
+        placeholder="Search elements..."
+        autocomplete="off"
         >
 
     </header>
@@ -291,7 +293,7 @@ function renderElement($element)
 
             <section class="info-panel">
 
-                <div class="selected-element">
+                <div class="selected-element card shadow-sm">
 
                     <div class="selected-top">
 
@@ -338,7 +340,7 @@ function renderElement($element)
 
                         <button
                             type="button"
-                            class="category-button <?php echo htmlspecialchars($slug, ENT_QUOTES, 'UTF-8'); ?>"
+                            class="category-button btn btn-sm <?php echo htmlspecialchars($slug, ENT_QUOTES, 'UTF-8'); ?>"
                             data-category="<?php echo htmlspecialchars($slug, ENT_QUOTES, 'UTF-8'); ?>"
                         >
 
@@ -351,7 +353,7 @@ function renderElement($element)
 
                     <button
                         type="button"
-                        class="category-button show-all"
+                        class="category-button show-all btn btn-sm"
                         data-category="all"
                     >
 
